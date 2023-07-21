@@ -1,0 +1,39 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.admincp-list {
+  color: red;
+}
+
+.admincp-list li {
+  float: left;
+  list-style: none;
+}
+
+.admincp-list li a {
+  text-decoration: none;
+  padding: 14px;
+}
+
+.clear {
+  clear: both;
+}
+
+.title-admincp {
+  font-size: 40px;
+  text-align: center;
+  color: #ff5722;
+  margin: 20px auto;
+}
+
+.wrapper {
+  width: 90%;
+  min-height: 700px;
+  margin: 0 auto;
+  background-color: beige;
+  padding: 25px 50px;
+}
