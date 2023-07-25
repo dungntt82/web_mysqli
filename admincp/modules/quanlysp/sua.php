@@ -70,10 +70,17 @@ $query_sua_sp = mysqli_query($mysqli, $sql_sua_sp);
           $sql_danhmuc = "SELECT * FROM tbl_danhmuc ORDER BY id_danhmuc DESC";
           $query_danhmuc = mysqli_query($mysqli, $sql_danhmuc);
           while ($row_danhmuc = mysqli_fetch_array($query_danhmuc)) {
-            // if()
+            if($row_danhmuc['id_danhmuc']==$row['id_danhmuc']){
           ?>
-            <option value="<?php echo $row_danhmuc['id_danhmuc'] ?>"><?php echo $row_danhmuc['tendanhmuc'] ?></option>
+            <option selected value="<?php echo $row_danhmuc['id_danhmuc'] ?>"><?php echo $row_danhmuc['tendanhmuc'] ?></option>
           <?php
+            }else{
+              ?>
+               <option value="<?php echo $row_danhmuc['id_danhmuc'] ?>"><?php echo $row_danhmuc['tendanhmuc'] ?></option>
+              <?php
+            }
+              ?>
+              <?php
           }
           ?>
         </select>

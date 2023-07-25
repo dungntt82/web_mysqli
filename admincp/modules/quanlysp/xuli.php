@@ -20,16 +20,17 @@ if (isset($_POST['themsanpham'])) {
     move_uploaded_file($hinhanh_tmp, 'uploads/' . $hinhanh);
     header('Location:../../index.php?action=quanlysp&query=them');
 } elseif (isset($_POST['suasanpham'])) {
-    if ($hinhanh!= '') {
+    if ($hinhanh != '') {
         move_uploaded_file($hinhanh_tmp, 'uploads/' . $hinhanh);
-        $sql = "SELECT * FROM tbl_sanpham WHERE id_sanpham = $_GET[idsanpham] LIMIT 1";
+        $sql_update = "UPDATE tbl_sanpham SET tensanpham = '" . $tensanpham . "', masp = '" . $masp . "' , giasp = '" . $giasp . "', soluong = '" . $soluong . "', tomtat = '" . $tomtat . "', noidung = '" . $noidung . "', tinhtrang = '" . $tinhtrang . "', hinhanh = '" . $hinhanh . "' , id_danhmuc = '" . $danhmuc . "' WHERE id_sanpham = '$_GET[idsanpham]'";
+        //xoa hinh anh cu
+        $sql = "SELECT * FROM tbl_sanpham WHERE id_sanpham = '$_GET[idsanpham]' LIMIT 1";
         $query = mysqli_query($mysqli, $sql);
         while ($row = mysqli_fetch_array($query)) {
             unlink('uploads/' . $row['hinhanh']);
         }
-        $sql_update = "UPDATE tbl_sanpham SET tensanpham = '".$tensanpham."', masp = '".$masp."' , giasp = '".$giasp."', soluong = '".$soluong."', tomtat = '". $tomtat. "', noidung = '".$noidung."', tinhtrang = '".$tinhtrang."', hinhanh = '".$hinhanh."' WHERE id_sanpham = $_GET[idsanpham]";
     } else {
-        $sql_update = "UPDATE tbl_sanpham SET tensanpham = '".$tensanpham."', masp = '".$masp."' , giasp = '".$giasp."', soluong = '".$soluong."', tomtat = '". $tomtat."', noidung = '".$noidung."', tinhtrang = '".$tinhtrang."' WHERE id_sanpham = $_GET[idsanpham]";
+        $sql_update = "UPDATE tbl_sanpham SET tensanpham = '" . $tensanpham . "', masp = '" . $masp . "' , giasp = '" . $giasp . "', soluong = '" . $soluong . "', tomtat = '" . $tomtat . "', noidung = '" . $noidung . "', tinhtrang = '" . $tinhtrang . "', id_danhmuc = '" . $danhmuc . "' WHERE id_sanpham = '$_GET[idsanpham]'";
     }
 
     mysqli_query($mysqli, $sql_update);
