@@ -45,6 +45,18 @@
       <td><textarea name="noidung" rows="10" style="resize: none;"></textarea></td>
     </tr>
     <tr>
+      <td>Danh mục sản phẩm </td>
+      <td>
+        <select name="tinhtrang" id="">
+          <?php
+            $sql_danhmuc = 
+          ?>
+          <option value="1">Kích hoạt</option>
+          <option value="0">Ẩn</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
       <td>Tình trạng: </td>
       <td>
         <select name="tinhtrang" id="">

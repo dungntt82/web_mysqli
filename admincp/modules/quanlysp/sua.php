@@ -18,15 +18,18 @@ $query_sua_sp = mysqli_query($mysqli, $sql_sua_sp);
   table {
     width: 100%;
   }
+  img{
+    width: 200px;
+  }
 </style>
 </style>
 <table>
   <?php
-  while ($dong = mysqli_fetch_array($query_sua_sp)) {
+  while ($row = mysqli_fetch_array($query_sua_sp)) {
     # code...
 
   ?>
-    <form method="POST" action="modules/quanlysp/xuli.php">
+    <form method="POST" action="modules/quanlysp/xuli.php?idsanpham=<?php echo $row['id_sanpham']?>"  enctype="multipart/form-data">
 
       <tr>
         <td>Tên sản phẩm: </td>
