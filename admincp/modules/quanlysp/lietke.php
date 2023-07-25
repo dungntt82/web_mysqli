@@ -1,5 +1,5 @@
 <?php
-$sql_lietke_sp = "SELECT * FROM tbl_sanpham ORDER BY id_sanpham DESC";
+$sql_lietke_sp = "SELECT * FROM tbl_sanpham, tbl_danhmuc WHERE tbl_sanpham.id_danhmuc = tbl_danhmuc.id_danhmuc ORDER BY id_sanpham DESC";
 $query_lietke_sp = mysqli_query($mysqli, $sql_lietke_sp);
 ?>
 <style>
@@ -28,6 +28,8 @@ $query_lietke_sp = mysqli_query($mysqli, $sql_lietke_sp);
         <th>Tên sản phẩm</th>
         <th>Hình ảnh</th>
         <th>Giá sản phẩm</th>
+        <th>Số lượng</th>
+        <th>Danh mục sản phẩm</th>
         <th>Mã sản phẩm</th>
         <th>Tóm tắt</th>
         <th>Trạng thái</th>
@@ -44,6 +46,7 @@ $query_lietke_sp = mysqli_query($mysqli, $sql_lietke_sp);
             <td><img src="modules/quanlysp/uploads/<?php echo $row['hinhanh']?>"></td>
             <td><?php echo $row['giasp']?></td>
             <td><?php echo $row['soluong']?></td>
+            <td><?php echo $row['tendanhmuc']?></td>
             <td><?php echo $row['masp']?></td>
             <td><?php echo $row['tomtat']?></td>
             <td><?php if($row['tinhtrang']==1){

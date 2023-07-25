@@ -6,15 +6,16 @@
     border: 1px solid black;
   }
 
-  input,textarea{
-    width: 100%;
-  }
-  table{
+  input,
+  textarea {
     width: 100%;
   }
 
+  table {
+    width: 100%;
+  }
 </style>
-<table >
+<table>
   <form method="POST" action="modules/quanlysp/xuli.php" enctype="multipart/form-data">
     <tr>
       <td>Tên sản phẩm: </td>
@@ -47,12 +48,16 @@
     <tr>
       <td>Danh mục sản phẩm </td>
       <td>
-        <select name="tinhtrang" id="">
+        <select name="danhmuc" id="">
           <?php
-            $sql_danhmuc = 
+          $sql_danhmuc = "SELECT * FROM tbl_danhmuc ORDER BY id_danhmuc DESC";
+          $query_danhmuc = mysqli_query($mysqli, $sql_danhmuc);
+          while ($row_danhmuc = mysqli_fetch_array($query_danhmuc)) {
           ?>
-          <option value="1">Kích hoạt</option>
-          <option value="0">Ẩn</option>
+            <option value="<?php echo $row_danhmuc['id_danhmuc'] ?>"><?php echo $row_danhmuc['tendanhmuc'] ?></option>
+          <?php
+          }
+          ?>
         </select>
       </td>
     </tr>
@@ -66,7 +71,7 @@
       </td>
     </tr>
     <tr>
-      <td colspan="2"><input type="submit" name="themsanpham" value="Thêm danh mục sản phẩm"></td>
+      <td colspan="2"><input type="submit" name="themsanpham" value="Thêm sản phẩm"></td>
     </tr>
   </form>
 </table>
