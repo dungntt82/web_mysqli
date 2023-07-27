@@ -11,11 +11,11 @@ $row_title = mysqli_fetch_array($query_pro);
     while ($row_pro = mysqli_fetch_array($query_pro)) {
     ?>
         <li>
-            <a href="#">
-                <img src="images/tainghe001.png" alt="">
+            <!-- <a href="#"> -->
+                <img src="admincp/modules/quanlysp/uploads/<?php echo $row_pro['hinhanh'] ?>" alt="">
                 <p class="title-product">Tên sản phẩm: Tai nghe Sony 001</p>
                 <p class="price-product">Giá: 320000</p>
-            </a>
+            <!-- </a> -->
         </li>
     <?php
     }
