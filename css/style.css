@@ -134,3 +134,7 @@ ul.product-list img {
   font-size: 20px;
   color: black;
 }
+
+a{
+  text-decoration: none;
+}
