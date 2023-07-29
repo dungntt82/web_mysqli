@@ -136,3 +136,21 @@ ul.product-list img {
   font-size: 20px;
   color: black;
 }
+
+.wrapper_chitiet{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  min-height: 700px;
+  padding: 20px 10px;
+  background-color: #f9f9c4;
+}
+
+.wrapper_chitiet img {
+    width: 100%;
+}
+
+.wrapper_chitiet .hinhanh_sanpham {
+
+width: 90%;
+}

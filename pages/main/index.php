@@ -1,7 +1,6 @@
 <?php
 $sql_pro = "SELECT * FROM tbl_sanpham, tbl_danhmuc WHERE tbl_sanpham.id_danhmuc = tbl_danhmuc.id_danhmuc ORDER BY tbl_sanpham.id_sanpham DESC LIMIT 25";
 $query_pro = mysqli_query($mysqli, $sql_pro);
-
 ?>
 
 <h5>Sản phẩm mới nhất</h5>
