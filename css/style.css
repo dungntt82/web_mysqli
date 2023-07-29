@@ -116,7 +116,6 @@ ul.product-list li {
 
 ul.product-list img {
   width: 100%;
-
 }
 
 .title-product {
@@ -131,13 +130,13 @@ ul.product-list img {
   color: #eb1d24;
 }
 
-.footer-copyright{
+.footer-copyright {
   text-align: center;
   font-size: 20px;
   color: black;
 }
 
-.wrapper_chitiet{
+.wrapper_chitiet {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -147,10 +146,19 @@ ul.product-list img {
 }
 
 .wrapper_chitiet img {
-    width: 100%;
+  width: 100%;
 }
 
 .wrapper_chitiet .hinhanh_sanpham {
+  width: 90%;
+}
 
-width: 90%;
+.btnthemgiohang {
+  background-color: #d61818;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  margin-top: 10px;
+  cursor: pointer;
 }
