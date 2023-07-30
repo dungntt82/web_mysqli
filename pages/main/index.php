@@ -12,7 +12,7 @@ $query_pro = mysqli_query($mysqli, $sql_pro);
         <li>
             <img src="admincp/modules/quanlysp/uploads/<?php echo $row['hinhanh']?>" alt="">
             <p class="title-product">Tên sản phẩm: <?php echo $row['tensanpham']?></p>
-            <p class="price-product">Giá: <?php echo $row['giasp']?></p>
+            <p class="price-product">Giá: <?php echo number_format($row['giasp'],0,',','.'). ' vnđ'?></p>
             <p class="cate-product">Danh mục: <?php echo $row['tendanhmuc']?> </p>
         </li>
     </a>

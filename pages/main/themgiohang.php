@@ -17,17 +17,20 @@ if (isset($_POST['themgiohang'])) {
             foreach ($_SESSION['cart'] as $cart_item) {
                 # code...
                 if ($cart_item['id'] == $id) {
-                    $product = array(array('tensanpham' => $cart_item['tensanpham'],  'soluong' => $soluong+1, 'id' => $cart_item['id'], 'giasp' => $cart_item['giasp'], 'hinhanh' => $cart_item['hinhanh'], 'masp' => $cart_item['masp']));
+                    #nếu dữ liệu trùng
+                    $product[] = array(array('tensanpham' => $cart_item['tensanpham'],  'soluong' => $soluong+1, 'id' => $cart_item['id'], 'giasp' => $cart_item['giasp'], 'hinhanh' => $cart_item['hinhanh'], 'masp' => $cart_item['masp']));
                     $found = true;
                 } else {
-                    $product = array(array('tensanpham' => $cart_item['tensanpham'],  'soluong' => $soluong, 'id' => $cart_item['id'], 'giasp' => $cart_item['giasp'], 'hinhanh' => $cart_item['hinhanh'], 'masp' => $cart_item['masp']));
+                    #nếu dữ liệu không trùng
+                    $product[] = array(array('tensanpham' => $cart_item['tensanpham'],  'soluong' => $soluong, 'id' => $cart_item['id'], 'giasp' => $cart_item['giasp'], 'hinhanh' => $cart_item['hinhanh'], 'masp' => $cart_item['masp']));
                 }
             }
             if($found==false){
+                #liên kết dữ liệu neu product voi product
                 $_SESSION['cart'] = array_merge($product,$new_product);
             }
             else{
-                $_SESSION['cart'] = $new_product;
+                $_SESSION['cart'] = $product;
             }
         } else {
             $_SESSION['cart'] = $new_product;
